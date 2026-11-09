@@ -1,0 +1,1028 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080",
+            "description": "Generated server url"
+        }
+    ],
+    "tags": [
+        {
+            "name": "authentication-controller",
+            "description": "Local Authentication API. Create new users and log in to get a JWToken"
+        },
+        {
+            "name": "profile",
+            "description": "Operations about the customer profile. Create a new customer profile, modify customer type, add accounts"
+        },
+        {
+            "name": "subscription",
+            "description": "Financial Services Products API. List products, check their eligibility, and take up product subscriptions"
+        }
+    ],
+    "paths": {
+        "/client/v1/profile/accounts/{accountTypeId}": {
+            "put": {
+                "tags": [
+                    "profile"
+                ],
+                "description": "Add an account of a given type to the customer",
+                "operationId": "addAccountOfType",
+                "parameters": [
+                    {
+                        "name": "accountTypeId",
+                        "in": "path",
+                        "description": "The id of the accounttype to add",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "on success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "profile"
+                ],
+                "description": "Delete an account of a given type from the customer",
+                "operationId": "removeAccountOfType",
+                "parameters": [
+                    {
+                        "name": "accountTypeId",
+                        "in": "path",
+                        "description": "The id of the accounttype to remove",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "on success"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            }
+        },
+        "/v1/user": {
+            "post": {
+                "tags": [
+                    "authentication-controller"
+                ],
+                "description": "create a local user with login credentials. This user can then log in and create a customer profile",
+                "operationId": "createUser",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateUserRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "204": {
+                        "description": "successfully created user"
+                    },
+                    "400": {
+                        "description": "username already exists"
+                    }
+                }
+            }
+        },
+        "/v1/token": {
+            "post": {
+                "tags": [
+                    "authentication-controller"
+                ],
+                "operationId": "token",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResult"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized - User does not have access to this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResult"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden - User is not Authenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResult"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic_auth": []
+                    }
+                ]
+            }
+        },
+        "/v1/token/validate": {
+            "post": {
+                "tags": [
+                    "authentication-controller"
+                ],
+                "operationId": "validateToken",
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized - User does not have access to this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResult"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Forbidden - User is not Authenticated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResult"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            }
+        },
+        "/client/v1/subscriptions": {
+            "get": {
+                "tags": [
+                    "subscription"
+                ],
+                "summary": "Get the customer's subscribed products",
+                "operationId": "subscriptions",
+                "responses": {
+                    "200": {
+                        "description": "List of subscribed products",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubscriptionsDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "subscription"
+                ],
+                "summary": "Take up products",
+                "operationId": "productTakeUp",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductIdList"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "List of subscribed products",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductTakeUp200Response"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User is not authorized to access this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "List of products and their failed checks",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TakeUpResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            }
+        },
+        "/client/v1/subscriptions/eligibility": {
+            "post": {
+                "tags": [
+                    "subscription"
+                ],
+                "summary": "Check if a user has the correct customer type and account in order to take up a Product",
+                "operationId": "eligibilityCheck",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductIdList"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "List of available products",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/EligibilityResultsDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            }
+        },
+        "/client/v1/profile": {
+            "get": {
+                "tags": [
+                    "profile"
+                ],
+                "summary": "Get the logged in user's profile",
+                "operationId": "profileGet",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomerDto"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User is not authorized to access this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "profile"
+                ],
+                "summary": "Register a new customer profile on the system",
+                "operationId": "registerCustomer",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateProfileRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully created customer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomerDto"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Customer for this user already exists. Use PATCH to update",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomerDto"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User is not authorized to access this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            },
+            "patch": {
+                "tags": [
+                    "profile"
+                ],
+                "summary": "Update an existing profile",
+                "description": "Currently only updates the customer type. I'm not really happy with this. This might be relevant: https://www.baeldung.com/spring-rest-json-patch. Also might be fine to just return 204 instead of the customer. ",
+                "operationId": "updateCustomer",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateProfileRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomerDto"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User is not authorized to access this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            }
+        },
+        "/client/v1/types": {
+            "get": {
+                "tags": [
+                    "profile"
+                ],
+                "summary": "Get the customer and account types",
+                "operationId": "typesGet",
+                "responses": {
+                    "200": {
+                        "description": "list of customer and account types",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TypesGet200Response"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/client/v1/subscriptions/{id}": {
+            "get": {
+                "tags": [
+                    "subscription"
+                ],
+                "summary": "Get a specific subscription",
+                "operationId": "subscription",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The ID of the subscription whose details we want to retrieve",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The given subscription",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubscriptionDto"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User is not authorized to access this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "not found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SubscriptionDto"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "subscription"
+                ],
+                "summary": "Delete a specific subscription",
+                "operationId": "removeSubscription",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The ID of the subscription whose details we want to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "User is not authorized to access this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            }
+        },
+        "/client/v1/profile/documents": {
+            "get": {
+                "tags": [
+                    "profile"
+                ],
+                "operationId": "getCustomerDocuments",
+                "responses": {
+                    "200": {
+                        "description": "List of documents for the customer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/DocumentDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "User is not authorized to access this resource",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            }
+        },
+        "/client/v1/profile/accounts": {
+            "get": {
+                "tags": [
+                    "profile"
+                ],
+                "operationId": "profileAccountsGet",
+                "responses": {
+                    "200": {
+                        "description": "get associated accounts",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AccountTypeDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer_auth": []
+                    }
+                ]
+            }
+        },
+        "/client/v1/products": {
+            "get": {
+                "tags": [
+                    "subscription"
+                ],
+                "summary": "List all available products",
+                "operationId": "listProducts",
+                "responses": {
+                    "200": {
+                        "description": "List of available products",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProductDto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/client/v1/products/{id}": {
+            "get": {
+                "tags": [
+                    "subscription"
+                ],
+                "summary": "Get a product based on its ID",
+                "operationId": "getProductById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The ID of the product whose details we want to retrieve",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The product with the given id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductDto"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CreateUserRequest": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "password",
+                    "username"
+                ]
+            },
+            "LoginResult": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "string"
+                    },
+                    "errorMessage": {
+                        "type": "string"
+                    },
+                    "loginAccessKey": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "success"
+                ]
+            },
+            "ProductTakeUp200Response": {},
+            "FulfilmentResultDto": {
+                "type": "object",
+                "properties": {
+                    "checkName": {
+                        "type": "string"
+                    },
+                    "passed": {
+                        "type": "boolean"
+                    },
+                    "failureMessage": {
+                        "type": "string"
+                    },
+                    "productIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                },
+                "required": [
+                    "checkName",
+                    "passed"
+                ]
+            },
+            "TakeUpResponse": {
+                "type": "object",
+                "properties": {
+                    "subscriptionId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "fulfilmentResultList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FulfilmentResultDto"
+                        }
+                    }
+                },
+                "required": [
+                    "fulfilmentResultList"
+                ]
+            },
+            "ProductIdList": {
+                "type": "object",
+                "properties": {
+                    "productIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                },
+                "required": [
+                    "productIds"
+                ]
+            },
+            "EligibilityResultsDto": {
+                "type": "object",
+                "properties": {
+                    "isEligible": {
+                        "type": "boolean"
+                    },
+                    "productId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "failureReasons": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "isEligible",
+                    "productId"
+                ]
+            },
+            "AccountTypeDto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "description",
+                    "id",
+                    "name"
+                ]
+            },
+            "CustomerDto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64",
+                        "readOnly": true
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "idNumber": {
+                        "type": "string"
+                    },
+                    "customerType": {
+                        "$ref": "#/components/schemas/CustomerTypesDto"
+                    },
+                    "customerAccounts": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AccountTypeDto"
+                        }
+                    }
+                },
+                "required": [
+                    "email",
+                    "firstName",
+                    "idNumber",
+                    "lastName"
+                ]
+            },
+            "CustomerTypesDto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "description",
+                    "name"
+                ]
+            },
+            "CreateProfileRequest": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "idNumber": {
+                        "type": "string"
+                    },
+                    "customerTypeId": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "TypesGet200Response": {
+                "type": "object",
+                "properties": {
+                    "customerTypes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CustomerTypesDto"
+                        }
+                    },
+                    "accountTypes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AccountTypeDto"
+                        }
+                    }
+                }
+            },
+            "ProductDto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number",
+                        "format": "double"
+                    },
+                    "imageUrl": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "description",
+                    "id",
+                    "imageUrl",
+                    "name",
+                    "price"
+                ]
+            },
+            "SubscriptionDto": {
+                "type": "object",
+                "properties": {
+                    "subscriptionId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "product": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ProductDto"
+                        }
+                    }
+                },
+                "required": [
+                    "product",
+                    "subscriptionId"
+                ]
+            },
+            "SubscriptionsDto": {
+                "type": "object",
+                "properties": {
+                    "subscriptions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SubscriptionDto"
+                        }
+                    }
+                },
+                "required": [
+                    "subscriptions"
+                ]
+            },
+            "DocumentDto": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "document": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "PDF",
+                            "PNG",
+                            "JPEG"
+                        ]
+                    }
+                },
+                "required": [
+                    "document",
+                    "id",
+                    "type"
+                ]
+            }
+        },
+        "securitySchemes": {
+            "basic_auth": {
+                "type": "http",
+                "scheme": "basic"
+            },
+            "bearer_auth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}
