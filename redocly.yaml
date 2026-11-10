@@ -1,0 +1,31 @@
+apis:
+  auth@v1:
+    root: ../specs/auth.yaml
+    x-openapi-ts:
+      output: src/api/generated/auth.ts
+      client: fetch
+  client@v1:
+    root: ../specs/client.yaml
+    x-openapi-ts:
+      output: src/api/generated/client.ts
+      client: fetch
+  customer@v1:
+    root: ../specs/customer-information.yaml
+    x-openapi-ts:
+      output: src/api/generated/customer.ts
+      client: fetch
+  dha@v1:
+    root: ../specs/dha.yaml
+    x-openapi-ts:
+      output: src/api/generated/dha.ts
+      client: fetch
+  kyc@v1:
+    root: ../specs/kyc.yaml
+    x-openapi-ts:
+      output: src/api/generated/kyc.ts
+      client: fetch
+  product@v1:
+    root: ../specs/product.yaml
+    x-openapi-ts:
+      output: src/api/generated/product.ts
+      client: fetch

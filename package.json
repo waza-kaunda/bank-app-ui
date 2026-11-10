@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test:ts": "tsc --noEmit"
+    "test:ts": "tsc --noEmit",
+    "build-openapi": "npx openapi-typescript"
   },
   "dependencies": {
     "openapi-fetch": "^0.17.0",
