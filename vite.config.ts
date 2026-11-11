@@ -12,6 +12,15 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [react()],
+  server: {
+    // Same-origin proxy to the dockerised Client Service, which sends no CORS headers
+    proxy: {
+      '/client': {
+        target: process.env.API_PROXY_TARGET ?? 'http://localhost:8080',
+        changeOrigin: true
+      }
+    }
+  },
   test: {
     projects: [{
       extends: true,

@@ -318,7 +318,7 @@ export interface components {
             price: number;
             imageUrl: string;
         };
-        ProductList: unknown;
+        ProductList: components["schemas"]["ProductDto"][];
         EligibilityResultsDto: {
             isEligible: boolean;
             /** Format: int64 */
@@ -330,7 +330,7 @@ export interface components {
             subscriptionId: Record<string, never>;
             product: components["schemas"]["ProductDto"][];
         };
-        SubscriptionList: unknown;
+        SubscriptionList: components["schemas"]["SubscriptionDto"][];
         FulfilmentResultDto: {
             checkName: string;
             passed: boolean;
