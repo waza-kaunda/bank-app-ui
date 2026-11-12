@@ -10,17 +10,24 @@ export interface ProductsProps {
   onRetry?: () => void;
 }
 
-export default function Products({ products, loading = false, errorMessage = null, onRetry }: ProductsProps) {
+export default function Products({
+  products,
+  loading = false,
+  errorMessage = null,
+  onRetry,
+}: ProductsProps) {
   const showEmpty = !loading && !errorMessage && products.length === 0;
 
   return (
     <main className="page">
-      <h1>Products</h1>
-
       {errorMessage && (
         <div className="banner banner--error" role="alert">
           <p>{errorMessage}</p>
-          <button type="button" className="button button--full" onClick={onRetry}>
+          <button
+            type="button"
+            className="button button--full"
+            onClick={onRetry}
+          >
             Try again
           </button>
         </div>
@@ -35,21 +42,48 @@ export default function Products({ products, loading = false, errorMessage = nul
       {loading && (
         <div role="status">
           <span className="visually-hidden">Loading products...</span>
+          <ImageCardSkeletons />
+        </div>
+      )}
+
+      {!loading && (
+          <ImageCards />
+      )}
+
+      {loading && (
+        <div role="status">
+          <span className="visually-hidden">Loading products...</span>
           <ProductSkeletons />
         </div>
       )}
 
       {!loading && products.length > 0 && (
         <>
-          <ProductSection id="recommended" title="Recommended for you" products={products} />
-          <ProductSection id="new-arrivals" title="New arrivals" products={products} />
+          <ProductSection
+            id="recommended"
+            title="Recommended for you"
+            products={products}
+          />
+          <ProductSection
+            id="new-arrivals"
+            title="New arrivals"
+            products={products}
+          />
         </>
       )}
     </main>
   );
 }
 
-function ProductSection({ id, title, products }: { id: string; title: string; products: Product[] }) {
+function ProductSection({
+  id,
+  title,
+  products,
+}: {
+  id: string;
+  title: string;
+  products: Product[];
+}) {
   const headingId = `${id}-heading`;
 
   return (
@@ -110,4 +144,45 @@ function ProductSkeletons() {
       ))}
     </ul>
   );
+}
+
+function ImageCardSkeletons() {
+  return (
+    <ul className="rail" role="list">
+      {[0, 1, 2].map((key) => (
+        <li key={key}>
+          <div className="skeleton__block skeleton__image" />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ImageCard() {
+  return (<article className="card">
+      {/* Decorative: the product name is in the heading below */}
+      <img
+        className="card__image"
+        src={placeholder}
+        alt="Product image thumbnail"
+        loading="lazy"
+        decoding="async"
+        onError={(event) => {
+          // Broken URL: swap to the placeholder once (guard avoids an error loop)
+          if (!event.currentTarget.src.endsWith(placeholder)) {
+            event.currentTarget.src = placeholder;
+          }
+        }}
+      />
+    </article>);
+}
+
+function ImageCards() {
+  return <ul className="rail" role="list">
+      {[0, 1, 2].map((key) => (
+        <li key={key}>
+          <ImageCard />
+        </li>
+      ))}
+    </ul>
 }

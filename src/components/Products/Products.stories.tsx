@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import placeholder from '../assets/product-placeholder.jpeg';
+import placeholder from '../../assets/product-placeholder.jpeg';
 import Products from './Products';
 
 const mockProducts = [

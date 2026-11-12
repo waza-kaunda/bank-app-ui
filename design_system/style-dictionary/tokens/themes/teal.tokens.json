@@ -1,0 +1,14 @@
+{
+  "color": {
+    "brand": {
+      "brand 100": {
+        "type": "color",
+        "value": "#05be9d"
+      },
+      "brand 200": {
+        "type": "color",
+        "value": "#43ffff"
+      }
+    }
+  }
+}

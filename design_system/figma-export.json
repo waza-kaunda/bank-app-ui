@@ -1,0 +1,874 @@
+{
+  "styles": {
+    "colors": [],
+    "textStyles": [
+      {
+        "name": "ios/Heading/Large Title",
+        "token": "ios-heading-large-title",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "700",
+        "fontSize": "34px",
+        "lineHeight": "41px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "ios/Heading/Headline 1",
+        "token": "ios-heading-headline-1",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "40px",
+        "lineHeight": "48px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "ios/Heading/Headline 2",
+        "token": "ios-heading-headline-2",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "28px",
+        "lineHeight": "34px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "ios/Heading/Headline 3 Regular",
+        "token": "ios-heading-headline-3-regular",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "20px",
+        "lineHeight": "28px",
+        "letterSpacing": "0.3499999940395355px"
+      },
+      {
+        "name": "ios/Heading/Headline 3 Bold",
+        "token": "ios-heading-headline-3-bold",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "700",
+        "fontSize": "20px",
+        "lineHeight": "28px",
+        "letterSpacing": "0.3499999940395355px"
+      },
+      {
+        "name": "ios/Heading/Heading 2 Bold",
+        "token": "ios-heading-heading-2-bold",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "700",
+        "fontSize": "28px",
+        "lineHeight": "34px",
+        "letterSpacing": "0.33764711022377014px"
+      },
+      {
+        "name": "ios/Caption/Caption 13pt",
+        "token": "ios-caption-caption-13pt",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "13px",
+        "lineHeight": "18px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "ios/Caption/Caption 11pt",
+        "token": "ios-caption-caption-11pt",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "11px",
+        "lineHeight": "13px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "ios/Tagline/Tagline 15",
+        "token": "ios-tagline-tagline-15",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "15px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "ios/Tagline/Tagline 13",
+        "token": "ios-tagline-tagline-13",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "13px",
+        "lineHeight": "18px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "ios/Tagline/Tagline 11",
+        "token": "ios-tagline-tagline-11",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "11px",
+        "lineHeight": "13px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "ios/Body/Body 15/Semibold",
+        "token": "ios-body-body-15-semibold",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "600",
+        "fontSize": "15px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "ios/Body/Body 15/Regular",
+        "token": "ios-body-body-15-regular",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "15px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "ios/Body/Body 15/Semibold uppercase",
+        "token": "ios-body-body-15-semibold-uppercase",
+        "type": "text",
+        "fontFamily": "SF Pro Text",
+        "fontWeight": "600",
+        "fontSize": "15px",
+        "lineHeight": "20px",
+        "letterSpacing": "-0.23999999463558197px",
+        "textTransform": "upper"
+      },
+      {
+        "name": "ios/Body/Body 17/Semibold",
+        "token": "ios-body-body-17-semibold",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "600",
+        "fontSize": "17px",
+        "lineHeight": "22px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "ios/Body/Body 17/Regular",
+        "token": "ios-body-body-17-regular",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "17px",
+        "lineHeight": "22px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "ios/Body/Body 20/Regular",
+        "token": "ios-body-body-20-regular",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "400",
+        "fontSize": "20px",
+        "lineHeight": "25px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "ios/Body/Body 20/Semibold",
+        "token": "ios-body-body-20-semibold",
+        "type": "text",
+        "fontFamily": "SF Pro Display",
+        "fontWeight": "600",
+        "fontSize": "20px",
+        "lineHeight": "25px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "android/Heading/Large Title",
+        "token": "android-heading-large-title",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "700",
+        "fontSize": "34px",
+        "lineHeight": "41px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Heading/Headline 1",
+        "token": "android-heading-headline-1",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "40px",
+        "lineHeight": "48px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Heading/Headline 2",
+        "token": "android-heading-headline-2",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "28px",
+        "lineHeight": "34px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Heading/Headline 3 Regular",
+        "token": "android-heading-headline-3-regular",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "20px",
+        "lineHeight": "28px",
+        "letterSpacing": "0.3499999940395355px"
+      },
+      {
+        "name": "android/Heading/Headline 3 Bold",
+        "token": "android-heading-headline-3-bold",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "700",
+        "fontSize": "20px",
+        "lineHeight": "28px",
+        "letterSpacing": "0.3499999940395355px"
+      },
+      {
+        "name": "android/Heading/Healine 2 Bold",
+        "token": "android-heading-healine-2-bold",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "700",
+        "fontSize": "28px",
+        "lineHeight": "34px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Caption/Caption 13",
+        "token": "android-caption-caption-13",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "13px",
+        "lineHeight": "18px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Caption/Caption 11",
+        "token": "android-caption-caption-11",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "11px",
+        "lineHeight": "13px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Tagline/Tagline 15",
+        "token": "android-tagline-tagline-15",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "15px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Tagline/Tagline 13",
+        "token": "android-tagline-tagline-13",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "13px",
+        "lineHeight": "18px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Tagline/Tagline 11",
+        "token": "android-tagline-tagline-11",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "11px",
+        "lineHeight": "13px",
+        "letterSpacing": "0.4099999964237213px"
+      },
+      {
+        "name": "android/Body/Body 15/Semibold",
+        "token": "android-body-body-15-semibold",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "600",
+        "fontSize": "15px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "android/Body/Body 15/Regular",
+        "token": "android-body-body-15-regular",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "15px",
+        "lineHeight": "20px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "android/Body/Body 17/Semibold",
+        "token": "android-body-body-17-semibold",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "600",
+        "fontSize": "17px",
+        "lineHeight": "22px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "android/Body/Body 17/Regular",
+        "token": "android-body-body-17-regular",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "17px",
+        "lineHeight": "22px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "android/Body/Body 20/Semibold",
+        "token": "android-body-body-20-semibold",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "600",
+        "fontSize": "20px",
+        "lineHeight": "25px",
+        "letterSpacing": "0.3499999940395355%"
+      },
+      {
+        "name": "android/Body/Body 20/Regular",
+        "token": "android-body-body-20-regular",
+        "type": "text",
+        "fontFamily": "Roboto",
+        "fontWeight": "400",
+        "fontSize": "20px",
+        "lineHeight": "25px",
+        "letterSpacing": "0.3499999940395355%"
+      }
+    ],
+    "effectStyles": [],
+    "gridStyles": []
+  },
+  "collections": {
+    "Color": {
+      "id": "VariableCollectionId:3:7891",
+      "modes": [
+        {
+          "id": "3:0",
+          "name": "Blue"
+        },
+        {
+          "id": "273:0",
+          "name": "Purple"
+        },
+        {
+          "id": "455:1",
+          "name": "Teal"
+        }
+      ],
+      "variables": {
+        "colors": [
+          {
+            "name": "Brand/Brand 300",
+            "token": "brand-brand-300",
+            "type": "color",
+            "value": "#1c2435",
+            "values": {
+              "Blue": "#1c2435",
+              "Purple": "#121c2f",
+              "Teal": "#1c2435"
+            }
+          },
+          {
+            "name": "Brand/Brand 100",
+            "token": "brand-brand-100",
+            "type": "color",
+            "value": "#1860bf",
+            "values": {
+              "Blue": "#1860bf",
+              "Purple": "#b906bc",
+              "Teal": "#05be9d"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 900",
+            "token": "neutrals-neutral-900",
+            "type": "color",
+            "value": "#000000",
+            "values": {
+              "Blue": "#000000",
+              "Purple": "#000000",
+              "Teal": "#000000"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 700",
+            "token": "neutrals-neutral-700",
+            "type": "color",
+            "value": "#3a3a3c",
+            "values": {
+              "Blue": "#3a3a3c",
+              "Purple": "#3a3a3c",
+              "Teal": "#3a3a3c"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 600",
+            "token": "neutrals-neutral-600",
+            "type": "color",
+            "value": "#8e8e93",
+            "values": {
+              "Blue": "#8e8e93",
+              "Purple": "#8e8e93",
+              "Teal": "#8e8e93"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 500",
+            "token": "neutrals-neutral-500",
+            "type": "color",
+            "value": "#aeaeb2",
+            "values": {
+              "Blue": "#aeaeb2",
+              "Purple": "#aeaeb2",
+              "Teal": "#aeaeb2"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 400",
+            "token": "neutrals-neutral-400",
+            "type": "color",
+            "value": "#c7c7cc",
+            "values": {
+              "Blue": "#c7c7cc",
+              "Purple": "#c7c7cc",
+              "Teal": "#c7c7cc"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 300",
+            "token": "neutrals-neutral-300",
+            "type": "color",
+            "value": "#e5e5ea",
+            "values": {
+              "Blue": "#e5e5ea",
+              "Purple": "#e5e5ea",
+              "Teal": "#e5e5ea"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 200",
+            "token": "neutrals-neutral-200",
+            "type": "color",
+            "value": "#f2f2f7",
+            "values": {
+              "Blue": "#f2f2f7",
+              "Purple": "#f2f2f7",
+              "Teal": "#f2f2f7"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 100",
+            "token": "neutrals-neutral-100",
+            "type": "color",
+            "value": "#ffffff",
+            "values": {
+              "Blue": "#ffffff",
+              "Purple": "#ffffff",
+              "Teal": "#ffffff"
+            }
+          },
+          {
+            "name": "Green/Green 400",
+            "token": "green-green-400",
+            "type": "color",
+            "value": "#168c34",
+            "values": {
+              "Blue": "#168c34",
+              "Purple": "#168c34",
+              "Teal": "#168c34"
+            }
+          },
+          {
+            "name": "Green/Green 300",
+            "token": "green-green-300",
+            "type": "color",
+            "value": "#34c759",
+            "values": {
+              "Blue": "#34c759",
+              "Purple": "#34c759",
+              "Teal": "#34c759"
+            }
+          },
+          {
+            "name": "Green/Green 200",
+            "token": "green-green-200",
+            "type": "color",
+            "value": "#a1efb5",
+            "values": {
+              "Blue": "#a1efb5",
+              "Purple": "#a1efb5",
+              "Teal": "#a1efb5"
+            }
+          },
+          {
+            "name": "Green/Green 100",
+            "token": "green-green-100",
+            "type": "color",
+            "value": "#daf4e1",
+            "values": {
+              "Blue": "#daf4e1",
+              "Purple": "#daf4e1",
+              "Teal": "#daf4e1"
+            }
+          },
+          {
+            "name": "Orange/Orange  400",
+            "token": "orange-orange-400",
+            "type": "color",
+            "value": "#e07912",
+            "values": {
+              "Blue": "#e07912",
+              "Purple": "#e07912",
+              "Teal": "#e07912"
+            }
+          },
+          {
+            "name": "Orange/Orange  300",
+            "token": "orange-orange-300",
+            "type": "color",
+            "value": "#ff9f40",
+            "values": {
+              "Blue": "#ff9f40",
+              "Purple": "#ff9f40",
+              "Teal": "#ff9f40"
+            }
+          },
+          {
+            "name": "Orange/Orange  200",
+            "token": "orange-orange-200",
+            "type": "color",
+            "value": "#ffba75",
+            "values": {
+              "Blue": "#ffba75",
+              "Purple": "#ffba75",
+              "Teal": "#ffba75"
+            }
+          },
+          {
+            "name": "Orange/Orange  100",
+            "token": "orange-orange-100",
+            "type": "color",
+            "value": "#ffead6",
+            "values": {
+              "Blue": "#ffead6",
+              "Purple": "#ffead6",
+              "Teal": "#ffead6"
+            }
+          },
+          {
+            "name": "Red/Red 400",
+            "token": "red-red-400",
+            "type": "color",
+            "value": "#c51c13",
+            "values": {
+              "Blue": "#c51c13",
+              "Purple": "#c51c13",
+              "Teal": "#c51c13"
+            }
+          },
+          {
+            "name": "Red/Red 300",
+            "token": "red-red-300",
+            "type": "color",
+            "value": "#ff3b30",
+            "values": {
+              "Blue": "#ff3b30",
+              "Purple": "#ff3b30",
+              "Teal": "#ff3b30"
+            }
+          },
+          {
+            "name": "Red/Red 200",
+            "token": "red-red-200",
+            "type": "color",
+            "value": "#ff9f9a",
+            "values": {
+              "Blue": "#ff9f9a",
+              "Purple": "#ff9f9a",
+              "Teal": "#ff9f9a"
+            }
+          },
+          {
+            "name": "Red/Red 100",
+            "token": "red-red-100",
+            "type": "color",
+            "value": "#fcd0c6",
+            "values": {
+              "Blue": "#fcd0c6",
+              "Purple": "#fcd0c6",
+              "Teal": "#fcd0c6"
+            }
+          },
+          {
+            "name": "Blue/Blue 400",
+            "token": "blue-blue-400",
+            "type": "color",
+            "value": "#005abd",
+            "values": {
+              "Blue": "#005abd",
+              "Purple": "#005abd",
+              "Teal": "#005abd"
+            }
+          },
+          {
+            "name": "Blue/Blue 300",
+            "token": "blue-blue-300",
+            "type": "color",
+            "value": "#007aff",
+            "values": {
+              "Blue": "#007aff",
+              "Purple": "#007aff",
+              "Teal": "#007aff"
+            }
+          },
+          {
+            "name": "Blue/Blue 200",
+            "token": "blue-blue-200",
+            "type": "color",
+            "value": "#a6d0ff",
+            "values": {
+              "Blue": "#a6d0ff",
+              "Purple": "#a6d0ff",
+              "Teal": "#a6d0ff"
+            }
+          },
+          {
+            "name": "Blue/Blue 100",
+            "token": "blue-blue-100",
+            "type": "color",
+            "value": "#e4efff",
+            "values": {
+              "Blue": "#e4efff",
+              "Purple": "#e4efff",
+              "Teal": "#e4efff"
+            }
+          },
+          {
+            "name": "Brand/Brand 200",
+            "token": "brand-brand-200",
+            "type": "color",
+            "value": "#1aafde",
+            "values": {
+              "Blue": "#1aafde",
+              "Purple": "#fd3e6c",
+              "Teal": "#43ffff"
+            }
+          },
+          {
+            "name": "Neutrals/Neutral 800",
+            "token": "neutrals-neutral-800",
+            "type": "color",
+            "value": "#1c1c1c",
+            "values": {
+              "Blue": "#1c1c1c",
+              "Purple": "#1c1c1c",
+              "Teal": "#1c1c1c"
+            }
+          }
+        ],
+        "numbers": [],
+        "strings": [],
+        "booleans": []
+      }
+    },
+    "Primitives": {
+      "id": "VariableCollectionId:3:21022",
+      "modes": [
+        {
+          "id": "3:1",
+          "name": "Mode 1"
+        }
+      ],
+      "variables": {
+        "colors": [],
+        "numbers": [
+          {
+            "name": "Spacing/sp-0",
+            "token": "spacing-sp-0",
+            "type": "float",
+            "value": 0
+          },
+          {
+            "name": "Spacing/sp-0-5",
+            "token": "spacing-sp-0-5",
+            "type": "float",
+            "value": 2
+          },
+          {
+            "name": "Spacing/sp-1",
+            "token": "spacing-sp-1",
+            "type": "float",
+            "value": 4
+          },
+          {
+            "name": "Spacing/sp-2",
+            "token": "spacing-sp-2",
+            "type": "float",
+            "value": 8
+          },
+          {
+            "name": "Spacing/sp-3",
+            "token": "spacing-sp-3",
+            "type": "float",
+            "value": 12
+          },
+          {
+            "name": "Spacing/sp-4",
+            "token": "spacing-sp-4",
+            "type": "float",
+            "value": 16
+          },
+          {
+            "name": "Spacing/sp-5",
+            "token": "spacing-sp-5",
+            "type": "float",
+            "value": 20
+          },
+          {
+            "name": "Spacing/sp-6",
+            "token": "spacing-sp-6",
+            "type": "float",
+            "value": 24
+          },
+          {
+            "name": "Spacing/sp-7",
+            "token": "spacing-sp-7",
+            "type": "float",
+            "value": 28
+          },
+          {
+            "name": "Spacing/sp-8",
+            "token": "spacing-sp-8",
+            "type": "float",
+            "value": 32
+          },
+          {
+            "name": "Spacing/sp-9",
+            "token": "spacing-sp-9",
+            "type": "float",
+            "value": 36
+          },
+          {
+            "name": "Spacing/sp-10",
+            "token": "spacing-sp-10",
+            "type": "float",
+            "value": 40
+          },
+          {
+            "name": "Spacing/sp-11",
+            "token": "spacing-sp-11",
+            "type": "float",
+            "value": 44
+          },
+          {
+            "name": "Spacing/sp-12",
+            "token": "spacing-sp-12",
+            "type": "float",
+            "value": 48
+          },
+          {
+            "name": "Spacing/sp-13",
+            "token": "spacing-sp-13",
+            "type": "float",
+            "value": 52
+          },
+          {
+            "name": "Spacing/sp-14",
+            "token": "spacing-sp-14",
+            "type": "float",
+            "value": 56
+          },
+          {
+            "name": "Spacing/sp-15",
+            "token": "spacing-sp-15",
+            "type": "float",
+            "value": 60
+          },
+          {
+            "name": "Border radius/radius-none",
+            "token": "border-radius-radius-none",
+            "type": "float",
+            "value": 0
+          },
+          {
+            "name": "Border radius/radius-xs",
+            "token": "border-radius-radius-xs",
+            "type": "float",
+            "value": 2
+          },
+          {
+            "name": "Border radius/radius-sm",
+            "token": "border-radius-radius-sm",
+            "type": "float",
+            "value": 4
+          },
+          {
+            "name": "Border radius/radius-md",
+            "token": "border-radius-radius-md",
+            "type": "float",
+            "value": 8
+          },
+          {
+            "name": "Border radius/radius-lg",
+            "token": "border-radius-radius-lg",
+            "type": "float",
+            "value": 12
+          },
+          {
+            "name": "Border radius/radius-xl",
+            "token": "border-radius-radius-xl",
+            "type": "float",
+            "value": 24
+          },
+          {
+            "name": "Border radius/radius-round",
+            "token": "border-radius-radius-round",
+            "type": "float",
+            "value": 50
+          },
+          {
+            "name": "Border radius/radius-full",
+            "token": "border-radius-radius-full",
+            "type": "float",
+            "value": 100
+          },
+          {
+            "name": "Border radius/radius-xxl",
+            "token": "border-radius-radius-xxl",
+            "type": "float",
+            "value": 28
+          }
+        ],
+        "strings": [],
+        "booleans": []
+      }
+    }
+  },
+  "metadata": {
+    "exportDate": "2026-11-12T11:23:48.542Z",
+    "figmaFileKey": "unknown",
+    "fileName": "Dev Camp - Native",
+    "pluginVersion": "1.0.0",
+    "collectionsFound": 2,
+    "collectionsExported": 2
+  }
+}

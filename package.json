@@ -11,6 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test:ts": "tsc --noEmit",
+    "tokens": "node design_system/style-dictionary/extract-themes.mjs && node design_system/style-dictionary/build.mjs",
     "build-openapi": "npx openapi-typescript"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "openapi-typescript": "^7.13.0",
     "playwright": "latest",
     "storybook": "^10.6.6",
+    "style-dictionary": "5.8.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.6",

@@ -1,5 +1,9 @@
 /* Products page. Mobile first: horizontal snap rails, becoming grids from 640px. */
 
+.headline-bold {
+  
+}
+
 .page {
   padding-block: var(--space-5) var(--space-6);
   display: flex;
@@ -97,7 +101,7 @@
 .button {
   min-height: var(--tap-target);
   min-width: var(--tap-target);
-  padding: 0 var(--space-5);
+  padding: 0 var(--space-1);
   border: 0;
   border-radius: var(--radius-sm);
   background: var(--color-brand);
