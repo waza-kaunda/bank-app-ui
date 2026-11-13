@@ -1,0 +1,225 @@
+/*
+ * GENERATED FILE. Do not edit by hand.
+ * Built with Style Dictionary from design_system/style-dictionary/tokens/
+ * Regenerate with: npm run tokens
+ */
+
+/* Primitives. Colors use the "Blue" mode by default. */
+:root {
+  --ds-color-blue-100: #e4efff;
+  --ds-color-blue-200: #a6d0ff;
+  --ds-color-blue-300: #007aff;
+  --ds-color-blue-400: #005abd;
+  --ds-color-brand-100: #1860bf;
+  --ds-color-brand-200: #1aafde;
+  --ds-color-brand-300: #1c2435;
+  --ds-color-green-100: #daf4e1;
+  --ds-color-green-200: #a1efb5;
+  --ds-color-green-300: #34c759;
+  --ds-color-green-400: #168c34;
+  --ds-color-neutral-100: #ffffff;
+  --ds-color-neutral-200: #f2f2f7;
+  --ds-color-neutral-300: #e5e5ea;
+  --ds-color-neutral-400: #c7c7cc;
+  --ds-color-neutral-500: #aeaeb2;
+  --ds-color-neutral-600: #8e8e93;
+  --ds-color-neutral-700: #3a3a3c;
+  --ds-color-neutral-800: #1c1c1c;
+  --ds-color-neutral-900: #000000;
+  --ds-color-orange-100: #ffead6;
+  --ds-color-orange-200: #ffba75;
+  --ds-color-orange-300: #ff9f40;
+  --ds-color-orange-400: #e07912;
+  --ds-color-red-100: #fcd0c6;
+  --ds-color-red-200: #ff9f9a;
+  --ds-color-red-300: #ff3b30;
+  --ds-color-red-400: #c51c13;
+  --ds-radius-full: 100px;
+  --ds-radius-lg: 12px;
+  --ds-radius-md: 8px;
+  --ds-radius-none: 0;
+  --ds-radius-round: 50px;
+  --ds-radius-sm: 4px;
+  --ds-radius-xl: 24px;
+  --ds-radius-xs: 2px;
+  --ds-radius-xxl: 28px;
+  --ds-sp-0: 0;
+  --ds-sp-0-5: 2px;
+  --ds-sp-1: 4px;
+  --ds-sp-2: 8px;
+  --ds-sp-3: 12px;
+  --ds-sp-4: 16px;
+  --ds-sp-5: 20px;
+  --ds-sp-6: 24px;
+  --ds-sp-7: 28px;
+  --ds-sp-8: 32px;
+  --ds-sp-9: 36px;
+  --ds-sp-10: 40px;
+  --ds-sp-11: 44px;
+  --ds-sp-12: 48px;
+  --ds-sp-13: 52px;
+  --ds-sp-14: 56px;
+  --ds-sp-15: 60px;
+}
+
+/* Theme overrides. Set data-theme on <html> to switch. */
+[data-theme='purple'] {
+  --ds-color-brand-100: #b906bc;
+  --ds-color-brand-200: #fd3e6c;
+  --ds-color-brand-300: #121c2f;
+}
+
+[data-theme='teal'] {
+  --ds-color-brand-100: #05be9d;
+  --ds-color-brand-200: #43ffff;
+}
+
+/* Text styles */
+:root {
+  --ds-font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', Roboto, 'Segoe UI', system-ui, sans-serif;
+}
+
+.ds-text-large-title {
+  font-family: var(--ds-font-family);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-headline-1 {
+  font-family: var(--ds-font-family);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-headline-2 {
+  font-family: var(--ds-font-family);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-headline-3-regular {
+  font-family: var(--ds-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.35px;
+}
+
+.ds-text-headline-3-bold {
+  font-family: var(--ds-font-family);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.35px;
+}
+
+.ds-text-heading-2-bold {
+  font-family: var(--ds-font-family);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-caption-13 {
+  font-family: var(--ds-font-family);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-caption-11 {
+  font-family: var(--ds-font-family);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-tagline-15 {
+  font-family: var(--ds-font-family);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-tagline-13 {
+  font-family: var(--ds-font-family);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-tagline-11 {
+  font-family: var(--ds-font-family);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0.41px;
+}
+
+.ds-text-body-15-semibold {
+  font-family: var(--ds-font-family);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.052px;
+}
+
+.ds-text-body-15-regular {
+  font-family: var(--ds-font-family);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.052px;
+}
+
+.ds-text-body-15-semibold-uppercase {
+  font-family: var(--ds-font-family);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: -0.24px;
+  text-transform: uppercase;
+}
+
+.ds-text-body-17-semibold {
+  font-family: var(--ds-font-family);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.06px;
+}
+
+.ds-text-body-17-regular {
+  font-family: var(--ds-font-family);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.06px;
+}
+
+.ds-text-body-20-regular {
+  font-family: var(--ds-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.07px;
+}
+
+.ds-text-body-20-semibold {
+  font-family: var(--ds-font-family);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  letter-spacing: 0.07px;
+}

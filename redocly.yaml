@@ -1,0 +1,6 @@
+apis:
+  client@v1:
+    root: ../specs/client.yaml
+    x-openapi-ts:
+      output: src/api/generated/client.ts
+      client: fetch

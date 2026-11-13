@@ -1,0 +1,18 @@
+{
+  "color": {
+    "brand": {
+      "brand 300": {
+        "type": "color",
+        "value": "#121c2f"
+      },
+      "brand 100": {
+        "type": "color",
+        "value": "#b906bc"
+      },
+      "brand 200": {
+        "type": "color",
+        "value": "#fd3e6c"
+      }
+    }
+  }
+}

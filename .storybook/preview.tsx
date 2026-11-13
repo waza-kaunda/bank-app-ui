@@ -1,6 +1,40 @@
+import { useEffect } from 'react'
 import type { Preview } from '@storybook/react-vite'
+import '../src/index.css'
 
 const preview: Preview = {
+  globalTypes: {
+    theme: {
+      description: 'Brand theme (sets data-theme on <html>)',
+      toolbar: {
+        title: 'Theme',
+        icon: 'paintbrush',
+        dynamicTitle: true,
+        items: [
+          { value: 'blue', title: 'Blue' },
+          { value: 'purple', title: 'Purple' },
+          { value: 'teal', title: 'Teal' },
+        ],
+      },
+    },
+  },
+
+  initialGlobals: {
+    theme: 'blue',
+  },
+
+  decorators: [
+    (Story, context) => {
+      const theme = context.globals.theme ?? 'blue'
+
+      useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme)
+      }, [theme])
+
+      return <Story />
+    },
+  ],
+
   parameters: {
     controls: {
       matchers: {

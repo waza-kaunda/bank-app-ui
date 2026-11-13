@@ -1,0 +1,191 @@
+/* Products page. Mobile first: horizontal snap rails, becoming grids from 640px. */
+
+.headline-bold {
+  
+}
+
+.page {
+  padding-block: var(--space-5) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Rail: swipeable row on phones. Bleeds to the screen edges. */
+.rail {
+  list-style: none;
+  margin: 0 calc(-1 * var(--page-pad));
+  padding: var(--space-1) var(--page-pad) var(--space-3);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(70%, 15rem);
+  gap: var(--space-3);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--page-pad);
+  -webkit-overflow-scrolling: touch;
+}
+
+.rail > li {
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.card {
+  height: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--color-skeleton);
+}
+
+.card__body {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.card__description {
+  font-size: var(--text-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card__price {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+/* Status: error and empty */
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.banner--error {
+  background: var(--color-danger-soft);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.button {
+  min-height: var(--tap-target);
+  min-width: var(--tap-target);
+  padding: 0 var(--space-1);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-brand);
+  color: var(--color-brand-contrast);
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button--full {
+  width: 100%;
+}
+
+/* Skeleton loading */
+.skeleton {
+  pointer-events: none;
+}
+
+.skeleton__block {
+  background: linear-gradient(
+    90deg,
+    var(--color-skeleton) 25%,
+    var(--color-skeleton-shine) 50%,
+    var(--color-skeleton) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton__image {
+  aspect-ratio: 1;
+  border-radius: 0;
+}
+
+.skeleton__line {
+  height: 0.875rem;
+}
+
+.skeleton__line--short {
+  width: 40%;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .button--full {
+    width: auto;
+  }
+
+  /* Tablet and up: rails become responsive grids */
+  .rail {
+    margin: 0;
+    padding: 0;
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: var(--space-4);
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+}

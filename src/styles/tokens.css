@@ -1,0 +1,66 @@
+/*
+ * Semantic design tokens. Components use these names.
+ * Primitives (--ds-*) and text style classes (.ds-text-*) come from Figma
+ * via Style Dictionary (`npm run tokens`) and live in
+ * design_system/style-dictionary/tokens.generated.css.
+ *
+ * Switch brand theme by setting data-theme="purple" or data-theme="teal"
+ * on <html>. No attribute (or "blue") uses the default theme.
+ */
+@import '../../design_system/style-dictionary/tokens.generated.css';
+
+:root {
+  /* Brand */
+  --color-brand: var(--ds-color-brand-100);
+  --color-brand-contrast: var(--ds-color-neutral-100);
+  --color-brand-soft: color-mix(in srgb, var(--color-brand) 10%, transparent);
+
+  /* Surfaces and text */
+  --color-bg: var(--ds-color-neutral-200);
+  --color-surface: var(--ds-color-neutral-100);
+  --color-text: var(--ds-color-neutral-700);
+  --color-text-strong: var(--ds-color-neutral-900);
+  --color-border: var(--ds-color-neutral-300);
+  --color-danger: var(--ds-color-red-400);
+  --color-danger-soft: var(--ds-color-red-100);
+  --color-skeleton: var(--ds-color-neutral-300);
+  --color-skeleton-shine: var(--ds-color-neutral-200);
+
+  /* Spacing scale */
+  --space-1: var(--ds-sp-1);
+  --space-2: var(--ds-sp-2);
+  --space-3: var(--ds-sp-3);
+  --space-4: var(--ds-sp-4);
+  --space-5: var(--ds-sp-6);
+  --space-6: var(--ds-sp-8);
+  --page-pad: var(--space-4);
+
+  /* Type scale */
+  --font-sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+
+  /* Shape and elevation */
+  --radius-sm: var(--ds-radius-md);
+  --radius-md: var(--ds-radius-lg);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  /* Touch */
+  --tap-target: 44px;
+  --focus-ring: 2px solid var(--color-brand);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --page-pad: var(--space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --page-pad: var(--space-6);
+  }
+}
