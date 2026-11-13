@@ -1,7 +1,7 @@
-import ProductsPage from './pages/ProductsPage'
+import HomePage from './pages/HomePage'
 
 function App() {
-  return <ProductsPage />
+  return <HomePage />
 }
 
 export default App

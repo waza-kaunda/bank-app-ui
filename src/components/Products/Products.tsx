@@ -20,6 +20,8 @@ export default function Products({
 
   return (
     <main className="page">
+
+      <h2 className="ds-text-heading-2-bold">Discover</h2>
       {errorMessage && (
         <div className="banner banner--error" role="alert">
           <p>{errorMessage}</p>
