@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2023",
-    "lib": ["ES2023", "DOM"],
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "types": ["vite/client"],
@@ -10,7 +10,9 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
   },
   "include": ["./**/*.ts", "./**/*.tsx"]
 }
