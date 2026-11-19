@@ -17,6 +17,11 @@ export default defineConfig({
       '/client': {
         target: process.env.API_PROXY_TARGET ?? 'http://localhost:8080',
         changeOrigin: true
+      },
+      // Token endpoint used by the login page
+      '/v1/token': {
+        target: process.env.API_PROXY_TARGET ?? 'http://localhost:8080',
+        changeOrigin: true
       }
     }
   },
