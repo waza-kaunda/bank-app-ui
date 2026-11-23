@@ -1,4 +1,4 @@
-@import './styles/tokens.css';
+@import "./styles/tokens.css";
 
 /* Base styles: written for small screens first, widened with min-width queries. */
 
@@ -10,7 +10,7 @@
 
 :root {
   color-scheme: light dark;
-  font-family: var(--font-sans);
+  font-family: var(--font-sf-pro);
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-text);
@@ -70,11 +70,299 @@ img {
 
 button {
   font: inherit;
+  cursor: pointer;
 }
 
 :focus-visible {
   outline: var(--focus-ring);
   outline-offset: 2px;
+}
+
+.welcome-page {
+  align-items: center;
+  background-color: var(--color-bg);
+  color: var(--color-text-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 165px;
+  justify-content: flex-end;
+  min-height: 100svh;
+  padding: 24px 24px 80px;
+  text-align: center;
+}
+
+.splash-screen {
+  align-items: center;
+  background-color: var(--color-bg);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55)),
+    url("./assets/splash-blue-theme.svg");
+  background-position: center;
+  background-size: cover;
+  color: var(--color-text-strong);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+  text-align: center;
+  z-index: 1000;
+}
+
+[data-theme="purple"] .splash-screen {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55)),
+    url("./assets/splash-purple-theme.svg");
+}
+
+[data-theme="teal"] .splash-screen {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.55)),
+    url("./assets/splash-teal-theme.svg");
+}
+
+.splash-brand {
+  padding: var(--space-6);
+}
+
+.auth-page {
+  gap: 0;
+  justify-content: center;
+  padding: 24px;
+}
+
+.logo-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: fit-content;
+  justify-content: flex-start;
+  max-width: 100%;
+  width: fit-content;
+}
+
+.welcome-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 22.5rem;
+  width: 100%;
+}
+
+.brand-mark {
+  align-items: center;
+  background-color: var(--color-brand);
+  border-radius: var(--radius-md);
+  color: var(--color-brand-contrast);
+  display: flex;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  height: 4rem;
+  justify-content: center;
+  width: 4rem;
+}
+
+.brand-wordmark {
+  color: var(--color-text-strong);
+  font-family: var(--font-sf-pro);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.brand-wordmark strong {
+  font-weight: 700;
+}
+
+.primary-action {
+  align-items: center;
+  background: linear-gradient(
+    to left,
+    var(--ds-color-brand-200),
+    var(--ds-color-brand-100)
+  );
+  border: 0;
+  border-radius: var(--radius-rounded);
+  box-sizing: border-box;
+  color: var(--color-brand-contrast);
+  display: inline-flex;
+  font: var(--text-base) var(--font-sf-pro);
+  justify-content: center;
+  min-height: var(--tap-target);
+  padding: var(--space-3) var(--space-5);
+  text-decoration: none;
+  width: 100%;
+}
+
+.primary-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.welcome-prompt,
+.welcome-secondary-link {
+  color: var(--color-text-strong);
+  font-size: var(--text-sm);
+}
+
+.welcome-prompt {
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.welcome-link {
+  color: var(--color-link);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.welcome-secondary-link {
+  text-decoration: underline;
+}
+
+.auth-content {
+  align-items: stretch;
+}
+
+.login-content {
+  align-items: flex-start;
+  gap: 24px;
+  justify-content: flex-start;
+  max-width: 100%;
+  min-height: calc(100svh - 48px);
+  width: fit-content;
+}
+
+.auth-content .brand-mark,
+.auth-content .brand-wordmark {
+  align-self: center;
+}
+
+.auth-content .brand-wordmark {
+  margin-bottom: var(--space-9);
+}
+
+.login-content .brand-mark,
+.login-content .brand-wordmark {
+  align-self: auto;
+}
+
+.auth-content .logo-wrapper {
+  align-self: center;
+}
+
+.login-content .brand-mark {
+  margin-bottom: 0;
+}
+
+.login-content .brand-wordmark {
+  margin-bottom: 0;
+}
+
+.auth-heading {
+  margin-bottom: var(--space-5);
+  text-align: center;
+}
+
+.login-content .auth-heading {
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.auth-form {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: fit-content;
+  max-width: 100%;
+  width: fit-content;
+}
+
+.login-content .auth-form {
+  margin-top: 31px;
+}
+
+.form-input {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: fit-content;
+  justify-content: flex-end;
+  max-width: 100%;
+  position: relative;
+  width: 320px;
+}
+
+.form-input-label {
+  background-color: var(--color-bg);
+  color: var(--color-text-strong);
+  left: var(--space-3);
+  padding-inline: var(--space-1);
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%) scale(0.85);
+  transform-origin: left center;
+  white-space: nowrap;
+}
+
+.form-control {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-strong);
+  font: var(--text-base) var(--font-sf-pro);
+  min-height: var(--tap-target);
+  padding: var(--space-3) var(--space-4);
+  width: 100%;
+}
+
+.form-control::placeholder {
+  color: var(--color-text);
+  opacity: 1;
+}
+
+.auth-error {
+  background-color: var(--color-danger-soft);
+  border-radius: var(--radius-sm);
+  color: var(--color-danger);
+  padding: var(--space-3);
+  text-align: left;
+}
+
+.auth-footer {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-top: var(--space-5);
+  text-align: center;
+}
+
+.login-content .auth-footer {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.forgot-password {
+  align-self: stretch;
+  font-size: var(--text-sm);
+  text-align: center;
+}
+
+.forgot-password a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.auth-footer a {
+  color: var(--color-link);
+  font-weight: 600;
+  text-decoration: none;
 }
 
 @media (min-width: 640px) {

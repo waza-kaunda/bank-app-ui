@@ -4,10 +4,9 @@ import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
-const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
+const dirname = import.meta.dirname;
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
@@ -16,6 +15,15 @@ export default defineConfig({
     // Same-origin proxy to the dockerised Client Service, which sends no CORS headers
     proxy: {
       '/client': {
+        target: process.env.API_PROXY_TARGET ?? 'http://localhost:8080',
+        changeOrigin: true
+      },
+      // Token endpoint used by the login page
+      '/v1/token': {
+        target: process.env.API_PROXY_TARGET ?? 'http://localhost:8080',
+        changeOrigin: true
+      },
+      '/v1/user': {
         target: process.env.API_PROXY_TARGET ?? 'http://localhost:8080',
         changeOrigin: true
       }
