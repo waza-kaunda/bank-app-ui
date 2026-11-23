@@ -1,6 +1,7 @@
 import { useState, type SubmitEvent } from "react";
 import { Link, useNavigate } from "react-router";
-import { AuthError, login } from "../api/auth";
+import { AuthError, login } from "../../api/auth";
+import BrandIdentity from "../../components/BrandIdentity/BrandIdentity";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -30,12 +31,7 @@ export default function LoginPage() {
   return (
     <main className="welcome-page auth-page">
       <section className="welcome-content auth-content login-content">
-        <div className="logo-wrapper">
-          <div className="brand-mark" aria-hidden="true">B</div>
-          <p className="brand-wordmark">
-            InsureTech<strong>Gaurd</strong>
-          </p>
-        </div>
+        <BrandIdentity />
         <form className="auth-form" onSubmit={handleSubmit}>
           <label className="form-input">
             <input

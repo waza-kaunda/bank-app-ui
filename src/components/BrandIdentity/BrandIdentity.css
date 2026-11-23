@@ -1,0 +1,33 @@
+.brand-identity--header {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--space-2);
+}
+
+.brand-identity__mark--header {
+  align-items: center;
+  background: var(--color-text-strong);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  height: 2.5rem;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+.brand-identity__header-icon {
+  -webkit-mask: url("../../assets/logo.svg") center / contain no-repeat;
+  background-color: var(--color-brand);
+  height: 1.6rem;
+  mask: url("../../assets/logo.svg") center / contain no-repeat;
+  width: 1.6rem;
+}
+
+.brand-identity__wordmark--header {
+  color: var(--color-brand);
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
+
+.brand-identity__wordmark--header strong {
+  font-weight: 700;
+}

@@ -1,8 +1,8 @@
 import { createBrowserRouter, redirect } from "react-router";
-import HomePage from "./pages/HomePage";
-import LandingPage from "./pages/LandingPage";
-import LoginPage from "./pages/LoginPage";
-import RegistrationPage from "./pages/RegistrationPage";
+import HomePage from "./pages/HomePage/HomePage";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
 import App from "./App";
 import { getAccessToken } from "./api/auth";
 

@@ -1,0 +1,35 @@
+.home-page {
+  background-color: var(--color-surface);
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  margin-inline: calc(50% - 50vw);
+  min-height: 100svh;
+  width: 100vw;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page .card__price,
+.home-page .brand-identity__wordmark--header {
+  color: #000;
+}
+
+.home-page__content {
+  align-self: center;
+  flex: 1;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-bottom: 6rem;
+  padding-inline:
+    max(var(--page-pad), env(safe-area-inset-left))
+    max(var(--page-pad), env(safe-area-inset-right));
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .home-page__content {
+    padding-bottom: 0;
+  }
+}
