@@ -1,0 +1,18 @@
+.home-page {
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.home-page__content {
+  flex: 1;
+  padding-bottom: 6rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .home-page__content {
+    padding-bottom: 0;
+  }
+}

@@ -151,7 +151,6 @@ button {
 
 .brand-mark {
   align-items: center;
-  background-color: var(--color-brand);
   border-radius: var(--radius-md);
   color: var(--color-brand-contrast);
   display: flex;

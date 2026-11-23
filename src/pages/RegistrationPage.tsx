@@ -1,6 +1,7 @@
 import { useState, type SubmitEvent } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthError, registerUser } from "../api/auth";
+import logo from "../assets/logo.svg";
 
 export default function RegistrationPage() {
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ export default function RegistrationPage() {
         <main className="welcome-page auth-page">
             <section className="welcome-content auth-content">
                 <div className="logo-wrapper">
-                    <div className="brand-mark" aria-hidden="true">B</div>
+                    <div className="brand-mark" aria-hidden="true"><img src={logo} alt="" /></div>
                     <p className="brand-wordmark">
                         InsureTech<strong>Gaurd</strong>
                     </p>
