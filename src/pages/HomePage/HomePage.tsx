@@ -1,7 +1,7 @@
-import Products from "../components/Products/Products";
-import HomeHeader from "../components/HomeHeader/HomeHeader";
-import MobileBottomDrawer from "../components/MobileBottomDrawer/MobileBottomDrawer";
-import { useProducts } from "../hooks/useProducts";
+import Products from "../../components/Products/Products";
+import HomeHeader from "../../components/HomeHeader/HomeHeader";
+import MobileBottomDrawer from "../../components/MobileBottomDrawer/MobileBottomDrawer";
+import { useProducts } from "../../hooks/useProducts";
 import "./HomePage.css";
 
 /** Container: wires the data hook to the presentational Products component. */

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router";
-import SplashScreen from "./pages/SplashScreen";
+import SplashScreen from "./pages/LandingPage/SplashScreen";
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);

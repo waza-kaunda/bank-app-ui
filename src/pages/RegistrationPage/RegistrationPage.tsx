@@ -1,6 +1,6 @@
 import { useState, type SubmitEvent } from "react";
 import { Link, useNavigate } from "react-router";
-import { AuthError, registerUser } from "../api/auth";
+import { AuthError, registerUser } from "../../api/auth";
 import logo from "../assets/logo.svg";
 
 export default function RegistrationPage() {

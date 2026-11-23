@@ -19,7 +19,7 @@
 .mobile-bottom-drawer__action {
   align-items: center;
   border-radius: var(--radius-sm);
-  color: var(--color-text);
+  color: var(--color-brand);
   display: flex;
   flex-direction: column;
   font-size: var(--text-sm);
@@ -30,8 +30,8 @@
 }
 
 .mobile-bottom-drawer__action[aria-current="page"] {
-  background: var(--color-brand);
-  color: var(--color-brand-contrast);
+  background: var(--color-brand-soft);
+  color: var(--color-brand);
 }
 
 .mobile-bottom-drawer__action svg {
