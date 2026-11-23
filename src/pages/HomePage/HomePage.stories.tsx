@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { MemoryRouter } from "react-router";
-import placeholder from "../assets/product-placeholder.jpeg";
-import type { Product } from "../api/client";
+import placeholder from "../../assets/product-placeholder.jpeg";
+import type { Product } from "../../api/client";
 import HomePage from "./HomePage";
 
 const products: Product[] = [

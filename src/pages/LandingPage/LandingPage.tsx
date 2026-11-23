@@ -1,17 +1,10 @@
 import { Link } from "react-router";
-import logo from "../assets/logo.svg";
+import BrandIdentity from "../../components/BrandIdentity/BrandIdentity";
 
 export default function LandingPage() {
   return (
     <main className="welcome-page">
-      <section className="logo-wrapper">
-        <div className="brand-mark" aria-hidden="true">
-          <img src={logo} alt="" />
-        </div>
-        <h1 className="brand-wordmark">
-          InsureTech<strong>Gaurd</strong>
-        </h1>
-      </section>
+      <BrandIdentity heading />
       <section className="welcome-content">
         <Link to="/login" className="primary-action">
           Log in
