@@ -15,8 +15,8 @@ function mockFetch(impl: () => Promise<Response>) {
 
 async function fillAndSubmit(canvasElement: HTMLElement) {
   const canvas = within(canvasElement);
-  await userEvent.type(canvas.getByPlaceholderText('Username'), 'jane@example.com');
-  await userEvent.type(canvas.getByPlaceholderText('Password'), 'secret');
+  await userEvent.type(canvas.getByLabelText('Email'), 'jane@example.com');
+  await userEvent.type(canvas.getByLabelText('Password'), 'secret');
   await userEvent.click(canvas.getByRole('button', { name: 'Login' }));
   return canvas;
 }

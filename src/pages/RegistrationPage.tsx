@@ -31,49 +31,59 @@ export default function RegistrationPage() {
     }
 
     return (
-        <main
-            style={{
-                alignItems: "center",
-                backgroundColor: "#f5f7fb",
-                display: "flex",
-                justifyContent: "center",
-                minHeight: "100vh",
-                padding: "24px",
-            }}
-        >
-            <section style={{ maxWidth: "360px", width: "100%" }}>
-                <h1 style={{ marginBottom: "24px" }}>Create an account</h1>
-                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-                    <input
-                        type="text"
-                        placeholder="Username"
-                        autoComplete="username"
-                        value={username}
-                        onChange={(event) => setUsername(event.target.value)}
-                        required
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        autoComplete="new-password"
-                        value={password}
-                        onChange={(event) => setPassword(event.target.value)}
-                        required
-                    />
-                    <input
-                        type="password"
-                        placeholder="Confirm password"
-                        autoComplete="new-password"
-                        value={confirmPassword}
-                        onChange={(event) => setConfirmPassword(event.target.value)}
-                        required
-                    />
-                    <button type="submit" disabled={submitting}>
+        <main className="welcome-page auth-page">
+            <section className="welcome-content auth-content">
+                <div className="logo-wrapper">
+                    <div className="brand-mark" aria-hidden="true">B</div>
+                    <p className="brand-wordmark">
+                        InsureTech<strong>Gaurd</strong>
+                    </p>
+                </div>
+                <h1 className="auth-heading">Create an account</h1>
+                <form className="auth-form" onSubmit={handleSubmit}>
+                    <label className="form-input">
+                        <input
+                            className="form-control"
+                            type="email"
+                            autoComplete="Email"
+                            value={username}
+                            onChange={(event) => setUsername(event.target.value)}
+                            required
+                        />
+                        <span className="form-input-label">Email</span>
+                    </label>
+                    <label className="form-input">
+                        <input
+                            className="form-control"
+                            type="password"
+                            autoComplete="new-password"
+                            value={password}
+                            onChange={(event) => setPassword(event.target.value)}
+                            required
+                        />
+                        <span className="form-input-label">Password</span>
+                    </label>
+                    <label className="form-input">
+                        <input
+                            className="form-control"
+                            type="password"
+                            autoComplete="new-password"
+                            value={confirmPassword}
+                            onChange={(event) => setConfirmPassword(event.target.value)}
+                            required
+                        />
+                        <span className="form-input-label">Confirm password</span>
+                    </label>
+                    <button className="primary-action" type="submit" disabled={submitting}>
                         {submitting ? "Creating account..." : "Sign up"}
                     </button>
-                    {errorMessage && <p role="alert">{errorMessage}</p>}
+                    {errorMessage && (
+                        <p className="auth-error" role="alert">
+                            {errorMessage}
+                        </p>
+                    )}
                 </form>
-                <p style={{ marginTop: "18px", textAlign: "center" }}>
+                <p className="auth-footer">
                     Already have an account? <Link to="/login">Log in</Link>
                 </p>
             </section>

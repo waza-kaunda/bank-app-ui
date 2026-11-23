@@ -14,9 +14,9 @@ function mockFetch(impl: () => Promise<Response>) {
 
 async function fillAndSubmit(canvasElement: HTMLElement) {
     const canvas = within(canvasElement);
-    await userEvent.type(canvas.getByPlaceholderText("Username"), "jane@example.com");
-    await userEvent.type(canvas.getByPlaceholderText("Password"), "secret");
-    await userEvent.type(canvas.getByPlaceholderText("Confirm password"), "secret");
+    await userEvent.type(canvas.getByLabelText("Email"), "jane@example.com");
+    await userEvent.type(canvas.getByLabelText("Password"), "secret");
+    await userEvent.type(canvas.getByLabelText("Confirm password"), "secret");
     await userEvent.click(canvas.getByRole("button", { name: "Sign up" }));
     return canvas;
 }
@@ -54,9 +54,9 @@ export const Mobile: Story = {
 export const PasswordMismatch: Story = {
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
-        await userEvent.type(canvas.getByPlaceholderText("Username"), "jane@example.com");
-        await userEvent.type(canvas.getByPlaceholderText("Password"), "secret");
-        await userEvent.type(canvas.getByPlaceholderText("Confirm password"), "different");
+        await userEvent.type(canvas.getByLabelText("Email"), "jane@example.com");
+        await userEvent.type(canvas.getByLabelText("Password"), "secret");
+        await userEvent.type(canvas.getByLabelText("Confirm password"), "different");
         await userEvent.click(canvas.getByRole("button", { name: "Sign up" }));
         await expect(await canvas.findByRole("alert")).toHaveTextContent("Passwords do not match.");
     },
