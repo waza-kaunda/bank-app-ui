@@ -9,12 +9,35 @@ const TOKEN_STORAGE_KEY = "accessToken";
 
 export class AuthError extends Error {}
 
+const USER_URL: string = import.meta.env.VITE_AUTH_USER_URL ?? "/v1/user";
+
 export function getAccessToken(): string | null {
   return sessionStorage.getItem(TOKEN_STORAGE_KEY);
 }
 
 export function logout(): void {
   sessionStorage.removeItem(TOKEN_STORAGE_KEY);
+}
+
+/** Creates a local user that can subsequently log in. */
+export async function registerUser(username: string, password: string): Promise<void> {
+  let response: Response;
+  try {
+    response = await fetch(USER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
+  } catch {
+    throw new AuthError("Unable to reach the server. Please try again.");
+  }
+
+  if (response.status === 400) {
+    throw new AuthError("An account with this username already exists.");
+  }
+  if (!response.ok) {
+    throw new AuthError("Registration failed. Please try again.");
+  }
 }
 
 /** Exchanges username/password for an access token and stores it for the session. */

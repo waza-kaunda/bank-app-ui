@@ -22,6 +22,10 @@ export default defineConfig({
       '/v1/token': {
         target: process.env.API_PROXY_TARGET ?? 'http://localhost:8080',
         changeOrigin: true
+      },
+      '/v1/user': {
+        target: process.env.API_PROXY_TARGET ?? 'http://localhost:8080',
+        changeOrigin: true
       }
     }
   },

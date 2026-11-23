@@ -53,9 +53,9 @@ export default function LandingPage() {
 				</Link>
 				<p style={{ color: '#596579', fontSize: '14px', margin: '22px 0 12px' }}>
 					New here?{' '}
-					<a href="/signup" style={{ color: '#2457d6', fontWeight: 600, textDecoration: 'none' }}>
+					<Link to="/register" style={{ color: '#2457d6', fontWeight: 600, textDecoration: 'none' }}>
 						Sign up
-					</a>
+					</Link>
 				</p>
 				<Link to="/home" style={{ color: '#596579', fontSize: '14px', textDecoration: 'underline' }}>
 					Continue as guest
